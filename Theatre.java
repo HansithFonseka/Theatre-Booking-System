@@ -209,4 +209,49 @@ public class Theatre {
             }
         }
 
+        private static void print_seating_area() {
+            System.out.println("     ***********");
+            System.out.println("     *  STAGE  *");
+            System.out.println("     ***********");
+            System.out.print("    ");
+            for (int i = 0; i < row1.length; i++) {   //print seating area row1
+                if (row1[i] == 0) {
+                    System.out.print("O");
+                }
+                if (row1[i] == 1) {
+                    System.out.print("X");
+                }
+                if (i == (row1.length / 2) - 1) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            System.out.print("  ");
+            for (int i = 0; i < row2.length; i++) {   //print seating area row2
+                if (row2[i] == 0) {
+                    System.out.print("O");
+                }
+                if (row2[i] == 1) {
+                    System.out.print("X");
+                }
+                if (i == (row2.length / 2) - 1) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+            for (int i = 0; i < row3.length; i++) {   //print seating area row3
+                if (row3[i] == 0) {
+                    System.out.print("O");
+                }
+                if (row3[i] == 1) {
+                    System.out.print("X");
+                }
+                if (i == (row3.length / 2) - 1) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    
+
     
