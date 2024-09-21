@@ -40,3 +40,8 @@ public class Theatre {
                 System.out.println("--------------------------------------------------");
                 System.out.println("\nEnter Option ");
                 Scanner optionIn = new Scanner(System.in);
+            
+            }
+        }
+    }
+}
