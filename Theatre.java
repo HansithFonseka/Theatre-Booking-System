@@ -41,7 +41,46 @@ public class Theatre {
                 System.out.println("\nEnter Option ");
                 Scanner optionIn = new Scanner(System.in);
             
+                int menuNumber = optionIn.nextInt();
+                switch (menuNumber) {
+                    case 1:
+                        buy_ticket();
+                        break;
+                    case 2:
+                        print_seating_area();
+                        break;
+                    case 3:
+                        cancel_ticket();
+                        break;
+                    case 4:
+                        show_available();
+                        break;
+                    case 5:
+                        System.out.println("Saved to file");
+                        save();
+                        break;
+                    case 6:
+                        System.out.println("Load from file");
+                        load();
+                        break;
+                    case 7:
+                        System.out.println("Tickets Information");
+                        show_tickets_info();
+                        break;
+                    case 8:
+                        sort_tickets();
+                        break;
+                    case 0:
+                        System.out.println("Thank you,Have a Nice Day!");
+                        process = false;
+                        break;
+                    default:
+                        System.out.println("invalid input.\nEnter a valid option!");
+                        break;
+                }
+            }catch (Exception e) {
+                System.out.println("Invalid input.\nEnter a valid option!");
             }
         }
-    }
-}
+
+    
