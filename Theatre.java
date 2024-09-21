@@ -83,4 +83,130 @@ public class Theatre {
             }
         }
 
+        private static void buy_ticket() {
+            while (true) {
+                try {
+                    Scanner rowIn = new Scanner(System.in);   //getting row number as input
+                    System.out.println("Enter the row number you need(1-3):");
+                    int row_Number = rowIn.nextInt();
+                    if (row_Number > 3 || row_Number < 1) {
+                        System.out.println("Enter a valid row number according to the row!");
+                        continue;
+                    }
+                    while (true) {
+                        try {
+                            Scanner seatIn = new Scanner(System.in);   //getting seat number as input
+                            System.out.println("Enter your seat according to the rows:");
+                            int seat_Number = seatIn.nextInt();
+                            int[] choseRow;
+                            //check validity in row 1
+                            if (row_Number == 1) {
+                                choseRow = row1;
+                                if (seat_Number < 0 || seat_Number > 13) {
+                                    System.out.println("Enter a valid seat number!");
+                                }
+                                if (seat_Number < 13 && seat_Number > 0) {
+                                    if (choseRow[seat_Number - 1] == 0) {
+                                        choseRow[seat_Number - 1] = 1;
+    
+                                        System.out.print("\nEnter your name: ");   //extended method to get the information of a Person
+                                        String name = optionIn.next();
+                                        System.out.print("\nEnter your surname: ");
+                                        String surname = optionIn.next();
+                                        String email = "";
+                                        while (!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")) {
+                                            if (!email.equals("")) {
+                                                System.out.println("Invalid email.");
+                                            }
+                                            System.out.print("\nEnter your email: ");
+                                            email = optionIn.next();
+                                        }
+                                        Person person = new Person(name, surname, email);
+                                        Ticket ticket = new Ticket(1, seat_Number, 100, person);   //create a new ticket and adds the ticket in the new array list
+                                        buyers.add(ticket);
+                                        System.out.println("You have booked seat " +seat_Number + " in row " + row_Number + ".");
+                                        break;
+                                    } else {
+                                        System.out.println("The seat is already booked!");
+                                        continue;
+                                    }
+                                }
+                            }
+                            if (row_Number == 2) {
+                                //check validity in row 2
+                                choseRow = row2;
+                                if (seat_Number < 0 || seat_Number > 17) {
+                                    System.out.println("Enter a valid seat number!");
+                                }
+                                if (seat_Number < 17 && seat_Number > 0) {
+                                    if (choseRow[seat_Number - 1] == 0) {
+                                        choseRow[seat_Number - 1] = 1;
+    
+                                        System.out.print("\nEnter your name: ");   //extended method to get the information of a Person
+                                        String name = optionIn.next();
+                                        System.out.print("\nEnter your surname: ");
+                                        String surname = optionIn.next();
+                                        String email = "";
+                                        while (!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")) {
+                                            if (!email.equals("")) {
+                                                System.out.println("Invalid email.");
+                                            }
+                                            System.out.print("\nEnter your email: ");
+                                            email = optionIn.next();
+                                        }
+                                        Person person = new Person(name, surname, email);
+                                        Ticket ticket = new Ticket(2, seat_Number, 200, person);   //create a new ticket and adds the ticket in the new array list
+                                        buyers.add(ticket);
+                                        System.out.println("You have booked seat " + seat_Number + " in row " + row_Number + ".");
+                                        break;
+                                    } else {
+                                        System.out.println("The seat is already booked!");
+                                        continue;
+                                    }
+                                }
+                            }
+                            if (row_Number == 3) {
+                                //check validity in row 3
+                                choseRow= row3;
+                                if (seat_Number < 0 || seat_Number > 21) {
+                                    System.out.println("Enter a valid seat number!");
+                                }
+                                if (seat_Number < 21 && seat_Number > 0) {
+                                    if (choseRow[seat_Number - 1] == 0) {
+                                        choseRow[seat_Number - 1] = 1;
+    
+                                        System.out.print("\nEnter your name: ");   //extended method to get the information of a Person
+                                        String name = optionIn.next();
+                                        System.out.print("\nEnter your surname: ");
+                                        String surname = optionIn.next();
+                                        String email = "";                        //https://www.javatpoint.com/java-email-validation
+                                        while (!email.matches("\\b[\\w.%-]+@[-.\\w]+\\.[A-Za-z]{2,4}\\b")) {
+                                            if (!email.equals("")) {
+                                                System.out.println("Invalid email.");
+                                            }
+                                            System.out.print("\nEnter your email: ");
+                                            email = optionIn.next();
+                                        }
+                                        Person person = new Person(name, surname, email);
+                                        Ticket ticket = new Ticket(3, seat_Number, 300, person);   //create a new ticket and adds the ticket in the new array list
+                                        buyers.add(ticket);
+                                        System.out.println("You have booked seat " + seat_Number + " in row " + row_Number + ".");
+                                        break;
+                                    } else {
+                                        System.out.println("The seat is already booked!");
+                                        continue;
+                                    }
+                                }
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Invalid input.\nEnter a valid option!");
+                        }
+                    }
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Invalid input.\nEnter a valid option!");
+                }
+            }
+        }
+
     
