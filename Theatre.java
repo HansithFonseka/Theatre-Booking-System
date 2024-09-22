@@ -387,4 +387,47 @@ public class Theatre {
             }
         }
 
+        private static void save() {
+            try {
+                FileWriter newFile = new FileWriter("seats.txt");
+    
+                newFile.write("Seats available in row 1: ");   //save data in row 1
+                for (int k = 1; k <= row1.length + 1; k++) {
+                    if (k == row1.length) {
+                        newFile.write(k + ".");
+                        break;
+                    }
+                    if (row1[k - 1] == 0) {
+                        newFile.write(k + ",");
+                    }
+                }newFile.write("\n");
+    
+                newFile.write("\nSeats available in row 2: ");   //save data in row 2
+                for (int k = 1; k <= row2.length + 1; k++) {
+                    if (k == row2.length) {
+                        newFile.write(k + ".");
+                        break;
+                    }
+                    if (row2[k - 1] == 0) {
+                        newFile.write(k + ",");
+                    }
+                }newFile.write("\n");
+    
+                newFile.write("\nSeats available in row 3: ");   //save data in row 3
+                for (int k = 1; k <= row3.length + 1; k++) {
+                    if (k == row3.length) {
+                        newFile.write(k + ".");
+                        break;
+                    }
+                    if (row3[k - 1] == 0) {
+                        newFile.write(k + ",");
+                    }
+                }newFile.write("\n");
+                newFile.close();   //close the file
+    
+            } catch (Exception e) {
+                System.out.println("Error");
+            }
+        }
+
     
