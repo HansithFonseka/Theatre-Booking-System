@@ -252,6 +252,105 @@ public class Theatre {
             }
             System.out.println();
         }
+
+        private static void cancel_ticket() {
+            while (true) {
+                try {
+                    Scanner rowInput = new Scanner(System.in);
+                    System.out.println("Enter the Row no you need(1-3):");
+                    int rowNumber = rowInput.nextInt();
+                    if (rowNumber > 3 || rowNumber < 1) {
+                        System.out.println("Enter a Valid row number!");
+                        continue;
+                    }
+                    while (true) {
+                        try {
+                            Scanner seatInput = new Scanner(System.in);
+                            System.out.println("Enter the seat you want to remove:");
+                            int seatNumber = seatInput.nextInt();
+                            int[] removeRow;
+                            if (rowNumber == 1) {
+                                //check validity in row 1
+                                removeRow = row1;
+                                if (seatNumber < 0 || seatNumber > 13) {
+                                    System.out.println("Enter a valid seat number according to the rows!");
+                                }
+                                if (seatNumber < 13 && seatNumber > 0) {
+                                    if (removeRow[seatNumber - 1] == 1) {
+                                        removeRow[seatNumber - 1] = 0;
+    
+                                        for (Ticket newObject : buyers) {
+                                            if (newObject.getRow() == 1 && newObject.getSeat() == seatNumber) {
+                                                buyers.remove(newObject);   //remove the object
+                                                break;
+                                            }
+                                        }
+                                        System.out.println("You have cleared seat " + seatNumber + " in row " + rowNumber + ".");
+                                    } else {
+                                        System.out.println("The seat is not booked!");
+                                        continue;
+                                    }
+                                    break;
+                                }
+                            }
+                            if (rowNumber == 2) {
+                                //check validity in row 2
+                                removeRow = row2;
+                                if (seatNumber < 0 || seatNumber > 17) {
+                                    System.out.println("Enter a valid seat number according to the rows!");
+                                }
+                                if (seatNumber < 17 && seatNumber > 0) {
+                                    if (removeRow[seatNumber - 1] == 1) {
+                                        removeRow[seatNumber - 1] = 0;
+    
+                                        for (Ticket newObject : buyers) {
+                                            if (newObject.getRow() == 2 && newObject.getSeat() == seatNumber) {
+                                                buyers.remove(newObject);   //remove the object
+                                                break;
+                                            }
+                                        }
+                                        System.out.println("You have cleared seat " + seatNumber + " in row " + rowNumber + ".");
+                                    } else {
+                                        System.out.println("The seat is not booked!");
+                                        continue;
+                                    }
+                                    break;
+                                }
+                            }
+                            if (rowNumber == 3) {
+                                //check validity in row 3
+                                removeRow = row3;
+                                if (seatNumber < 0 || seatNumber > 21) {
+                                    System.out.println("Enter a valid seat number according to the rows!");
+                                }
+                                if (seatNumber < 21 && seatNumber > 0) {
+                                    if (removeRow[seatNumber - 1] == 1) {
+                                        removeRow[seatNumber - 1] = 0;
+    
+                                        for (Ticket newObject : buyers) {
+                                            if (newObject.getRow() == 3 && newObject.getSeat() == seatNumber) {
+                                                buyers.remove(newObject);   //remove the object
+                                                break;
+                                            }
+                                        }
+                                        System.out.println("You have cleared seat " + seatNumber + " in row " + rowNumber + ".");
+                                    } else {
+                                        System.out.println("The seat is not booked!");
+                                        continue;
+                                    }
+                                    break;
+                                }
+                            }
+                        } catch (Exception e) {
+                            System.out.println("Invalid input.\nEnter a valid option!");
+                        }
+                    }
+                    break;
+                } catch (Exception e) {
+                    System.out.println("Invalid input.\nEnter a valid option!");
+                }
+            }
+        }
     
 
     
