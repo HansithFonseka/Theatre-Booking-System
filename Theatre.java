@@ -430,4 +430,17 @@ public class Theatre {
             }
         }
 
+        private static void load() {   //load data from file
+            try {
+                File newFile = new File("seats.txt");
+                Scanner scan = new Scanner(newFile);
+                while(scan.hasNextLine()){
+                    String loading= scan.nextLine();
+                    System.out.println(loading);
+                }
+            } catch (FileNotFoundException e) {
+                System.out.println("Error: seating chart file not found.");
+            }
+        }
+
     
